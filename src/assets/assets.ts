@@ -8,7 +8,7 @@ import ChatGPT07 from "./chatGPT07.webp"
 import ChatGPT08 from "./chatGPt08.webp"
 import ChatGPT09 from "./chatGPT09.webp"
 import ChatGPT10 from "./chatGPT10.webp"
-import ChatGPT11 from "./chatGPT11.webp"
+import ChatGPT11 from "./chatgPT11.webp"
 import ChatGPT12 from "./chatGPT12.mp4"
 import ChatGPT13 from "./chatGPT13.webp"
 
