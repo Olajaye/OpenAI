@@ -5,8 +5,11 @@ import { IoIosArrowForward } from "react-icons/io";
 type Props ={
   title: string
   item: {
-    constant: string,
-    style: string
+    textTop?: string,
+    textBelow?: string,
+    style?: string,
+    image?: string,
+    video?: string
   }[],
   increaseWeight?: boolean
 }
@@ -43,12 +46,28 @@ const Card = ({title, item, increaseWeight}:Props ) => {
             <>
               <div
                 key={index}
-                className={`flex-shrink-0 rounded-md shadow-md flex items-center justify-center text-xl font-semibold overflow-hidden`}
+                className={`flex-shrink-0 rounded-md shadow-md flex items-center justify-center text-xl font-semibold overflow-hidden relative`}
               >
-                <div className={` ${item.style} ${index === 0 ? "w-[175px] h-[400px] hidden xl:block": !increaseWeight ? "xl:w-[340px] xl:h-[450px] w-[280px] h-[350px]": "xl:w-[540px] w-[450px] xl:h-[400px] h-[300px]" } hover:scale-105 transition-all duration-300 p-3`}>
-                  {index !== 0 && item.constant}
-                </div>
-                
+                <a href="">
+                  <div className={`${index === 0 ? "w-[175px] h-[400px] hidden xl:block": !increaseWeight ? "xl:w-[350px] xl:h-[460px] w-[280px] h-[350px]": "xl:w-[540px] w-[450px] xl:h-[400px] h-[300px]" } `}>
+
+                    <div className="w-[100%] h-[100%] flex justify-center items-center hover:scale-110 transition-all duration-300">
+                      {item.image && 
+                      <img src={item.image} alt="" className="w-[100%] h-[100%] "/>}
+                      {item.video && 
+                        <video controls autoPlay loop muted >
+                         <source src={item.video} type="video/mp4" />
+                        </video>
+                      }
+                    </div>
+                    
+                    
+                  </div>
+                  <div className="absolute top-0 right-0 left-0 p-3 flex justify-between flex-col h-[100%]">
+                      <h2 className={item.style ? "text-black" : "text-white"}>{index !== 0 && item.textTop}</h2>
+                      <h2 className={item.style ? "text-black" : "text-white"}>{index !== 0 && item.textBelow}</h2>
+                    </div>
+                </a>
               </div>
             </>
           ))}
