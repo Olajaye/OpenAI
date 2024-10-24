@@ -4,7 +4,7 @@ const OpenAISVG = () => (
     xmlns="http://www.w3.org/2000/svg"
     width={80}
     fill="none"
-    className="w-[7rem] m:w-[9rem] h-auto"
+    className="w-[6rem] m:w-[8rem] h-auto"
     viewBox="0 0 80 23"
   >
     <path

@@ -37,33 +37,37 @@ const Home = () => {
   return(
     <section className="mt-6">
       <div className="w-full  mx-auto">
-        <div className="overflow-hidden h-[620px]">
+        <div className="overflow-hidden h-[520px] md:h-[620px]">
           <div
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-scroll space-x-4 px-7 hide-scrollbar mt-7 h-[620px]"
+              className="flex overflow-x-scroll space-x-4 px-3 md:px-7 hide-scrollbar mt-7"
             >
               {slides.map((slide) => (
                 <div key={slide.id} className="min-w-full">
-                  <div className={`w-[100%]  h-[620px]  rounded-md flex flex-col justify-center items-center relative`}>
-                    {!slide.vid && <img src={ slide.src} className='w-[100%]  h-[620px]' />}
+                  <div className={`w-[100%]  h-[500px] md:h-[620px] rounded-md relative`}>
+                    
+                    {!slide.vid && <img src={slide.src} className='w-[100%] pt-2 rounded-md h-[480px] md:h-[590px]'/>}
+
                     {slide.vid && 
-                        <video controls autoPlay loop muted height={700} width={7000}>
-                         <source src={slide.src} type="video/mp4" />
-                        </video>
-                      }
-                    <div className='absolute flex justify-around items-center flex-col'>
-                      <h1 className="font-semibold">{slide.titile}</h1>
-                      <p className="my-4 px-6 text-xl text-center">{slide.text}</p>
+                      <video controls autoPlay loop muted height={700} width={7000}>
+                        <source src={slide.src} type="video/mp4" />
+                      </video>
+                    }
+                    <div className='absolute top-1/2 left-1/2 transform w-[90%] -translate-x-1/2 -translate-y-1/2 text-center  shadow-lg"'>
+                      <h1 className="font-semibold text-3xl">{slide.titile}</h1>
+                      <p className="my-4 px-6 text-base md:text-xl text-center">{slide.text}</p>
                       {slide.learn && <button className="bg-white text-black rounded-3xl text-center">Learn more</button>}
                     </div>
-                   
+                    
                   </div>
                 </div>
               ))}
+
+
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ const Card = ({title, item, increaseWeight}:Props ) => {
   return (
     <>
       <section className="">
-        <div className="flex justify-between items-end ps-10 xl:ps-56 mt-20">
+        <div className="flex justify-between items-end px-5 md:ps-10 xl:ps-56 mt-20">
           <h2 className="text-2xl font-semibold">{title}</h2>
           <div className="flex space-x-3 xl:pe-56">
             <IoIosArrowBack className="text-xl" onClick={()=> scroll("left")}/>
@@ -49,7 +49,7 @@ const Card = ({title, item, increaseWeight}:Props ) => {
                 className={`flex-shrink-0 rounded-md shadow-md flex items-center justify-center text-xl font-semibold overflow-hidden relative`}
               >
                 <a href="">
-                  <div className={`${index === 0 ? "w-[175px] h-[400px] hidden xl:block": !increaseWeight ? "xl:w-[350px] xl:h-[460px] w-[280px] h-[350px]": "xl:w-[540px] w-[450px] xl:h-[400px] h-[300px]" } `}>
+                  <div className={`${index === 0 ? "w-[175px] h-[400px] hidden xl:block": !increaseWeight ? "xl:w-[350px] xl:h-[460px] w-[280px] h-[350px]": "xl:w-[540px] w-[200px] xl:h-[400px] h-[300px]" } `}>
 
                     <div className="w-[100%] h-[100%] flex justify-center items-center hover:scale-110 transition-all duration-300">
                       {item.image && 
@@ -60,8 +60,6 @@ const Card = ({title, item, increaseWeight}:Props ) => {
                         </video>
                       }
                     </div>
-                    
-                    
                   </div>
                   <div className="absolute top-0 right-0 left-0 p-3 flex justify-between flex-col h-[100%]">
                       <h2 className={item.style ? "text-black" : "text-white"}>{index !== 0 && item.textTop}</h2>
