@@ -1,5 +1,5 @@
 import  React, { useState } from 'react';
-import { ChatGPTIMG,  HeroIMG, NewsIMG, ResearchIMG } from '../../assets/assets';
+import { ChatGPTIMG,  HeroIMG, NewsIMG } from '../../assets/assets';
 
 
 const Home = () => {
