@@ -30,8 +30,8 @@ const Card = ({title, item, increaseWeight}:Props ) => {
   return (
     <>
       <section className="">
-        <div className="flex justify-between items-end px-5 md:ps-10 xl:ps-56 mt-20">
-          <h2 className="text-2xl font-semibold">{title}</h2>
+        <div className="flex justify-between items-end px-5 md:ps-10 xl:ps-48 mt-20">
+          <h2 className="text-3xl text-white font-semibold">{title}</h2>
           <div className="flex space-x-3 xl:pe-56">
             <IoIosArrowBack className="text-xl" onClick={()=> scroll("left")}/>
             <IoIosArrowForward className="text-xl" onClick={()=> scroll("right")}/>
@@ -43,31 +43,26 @@ const Card = ({title, item, increaseWeight}:Props ) => {
           className="flex overflow-x-scroll space-x-4 p-4 hide-scrollbar mt-7"
         >
           {item.map((item, index) => (
-            <>
-              <div
-                key={index}
-                className={`flex-shrink-0 rounded-md shadow-md flex items-center justify-center text-xl font-semibold overflow-hidden relative`}
-              >
-                <a href="">
-                  <div className={`${index === 0 ? "w-[175px] h-[400px] hidden xl:block": !increaseWeight ? "xl:w-[350px] xl:h-[460px] w-[280px] h-[350px]": "xl:w-[540px] w-[200px] xl:h-[400px] h-[300px]" } `}>
+            <div key={index} className={` relative flex-shrink-0 rounded-md shadow-md text-xl font-semibold overflow-hidden `}>
 
-                    <div className="w-[100%] h-[100%] flex justify-center items-center hover:scale-110 transition-all duration-300">
-                      {item.image && 
-                      <img src={item.image} alt="" className="w-[100%] h-[100%] "/>}
-                      {item.video && 
-                        <video controls autoPlay loop muted >
-                         <source src={item.video} type="video/mp4" />
-                        </video>
-                      }
-                    </div>
-                  </div>
-                  <div className="absolute top-0 right-0 left-0 p-3 flex justify-between flex-col h-[100%]">
-                      <h2 className={item.style ? "text-black" : "text-white"}>{index !== 0 && item.textTop}</h2>
-                      <h2 className={item.style ? "text-black" : "text-white"}>{index !== 0 && item.textBelow}</h2>
-                    </div>
-                </a>
+              <div className={`${index === 0 ? "w-[155px] h-[400px] hidden xl:block": !increaseWeight ? "xl:w-[350px] xl:h-[460px] w-[280px] h-[350px]": "xl:w-[540px] w-[200px] xl:h-[400px] h-[300px]" }`}>
+                {item.image && 
+                <img src={item.image} alt="" className="w-[100%] h-[100%] duration-500 hover:scale-[1.01]  transition-transform  "/>}
+                {item.video && 
+                  <video controls autoPlay loop muted >
+                    <source src={item.video} type="video/mp4" />
+                  </video>
+                }
+                  
+                
+                <div className="absolute top-0 right-0 left-0 p-3 flex justify-between flex-col h-[100%]">
+                  <h2 className={item.style ? "text-black" : "text-white"}>{index !== 0 && item.textTop}</h2>
+                  <h2 className={item.style ? "text-black" : "text-white"}>{index !== 0 && item.textBelow}</h2>
+                </div>
               </div>
-            </>
+            </div>
+          
+            
           ))}
         </div>  
       </section>

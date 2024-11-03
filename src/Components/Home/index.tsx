@@ -17,10 +17,10 @@ const Home = () => {
 
   const slides = [
     { id: 1, src: HeroIMG.Hero01, alt: 'Slide 1', titile: "OpenAI o1", text:"A new series of AI models designed to spend more time thinking before they respond.", learn: true },
-    { id: 2, src: HeroIMG.Hero02, alt: 'Slide 2', titile: "Ask ChatGpt anything", text:"",  learn: false  },
+    // { id: 2, src: HeroIMG.Hero02, alt: 'Slide 2', titile: "Ask ChatGpt anything", text:"",  learn: false  },
     { id: 3, src: ChatGPTIMG.ChatGPT09, alt: 'Slide 3',titile: "ChatGPT on your desktop", text:"Chat about email, screenshots, files, and anything on your screen.",  learn: true  },
-    { id: 3, src: NewsIMG.News01, alt: 'Slide 3',titile: "Apple & ChatGPT", text:"OpenAI and Apple announce partnership to integrate ChatGPT into Apple experiences.",  learn: true  },
-    { id: 3, src: ResearchIMG.Research08, alt: 'Slide 3',titile: "Introducing Sora", text:"Creating realistic and imaginative video from text.",  learn: true , vid:true },
+    { id: 4, src: NewsIMG.News01, alt: 'Slide 3',titile: "Apple & ChatGPT", text:"OpenAI and Apple announce partnership to integrate ChatGPT into Apple experiences.",  learn: true  },
+    { id: 5, src: "https://cdn.openai.com/sora/videos/paper-airplanes.mp4", alt: 'Slide 3',titile: "Introducing Sora", text:"Creating realistic and imaginative video from text.",  learn: true , vid:true },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,20 +37,20 @@ const Home = () => {
   return(
     <section className="mt-6">
       <div className="w-full  mx-auto">
-        <div className="overflow-hidden h-[520px] md:h-[620px]">
+        <div className="overflow-hidden h-[520px] md:h-[620px] w-[100%]">
           <div
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-scroll space-x-4 px-3 md:px-7 hide-scrollbar mt-7"
+              className="flex overflow-x-scroll px-7 hide-scrollbar mt-7"
             >
               {slides.map((slide) => (
-                <div key={slide.id} className="min-w-full">
-                  <div className={`w-[100%]  h-[500px] md:h-[620px] rounded-md relative`}>
+                <div key={slide.id} className="min-w-[96%] overflow-hidden relative ">
+                  <div className={`w-[99%]  h-[500px] md:h-[620px] rounded-md overflow-hidden flex justify-center items-center`}>
                     
-                    {!slide.vid && <img src={slide.src} className='w-[100%] pt-2 rounded-md h-[480px] md:h-[590px]'/>}
+                    {!slide.vid && <img src={slide.src} className='w-[100%] pt-2 rounded-lg h-[480px] md:h-[590px] duration-500 hover:scale-[1.01]  transition-transform '/>}
 
                     {slide.vid && 
                       <video controls autoPlay loop muted height={700} width={7000}>
@@ -66,8 +66,6 @@ const Home = () => {
                   </div>
                 </div>
               ))}
-
-
             </div>
           </div>
         </div>
