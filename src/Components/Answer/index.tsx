@@ -1,7 +1,7 @@
 
 
 
-const Answer = () => {
+const InstantAnswer = () => {
   return (
    <section className="flex justify-center items-center mt-16 mb-16 p-6">
     <div  className="flex justify-center items-center bg-[#171717] md:w-[80%] md:p-20 p-5">
@@ -15,4 +15,4 @@ const Answer = () => {
   )
 }
 
-export default Answer
+export default InstantAnswer

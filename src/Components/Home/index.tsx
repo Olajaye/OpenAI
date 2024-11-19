@@ -35,9 +35,9 @@ const Home = () => {
 
 
   return(
-    <section className="mt-6">
+    <section className="">
       <div className="w-full  mx-auto">
-        <div className="overflow-hidden h-[520px] md:h-[620px] w-[100%]">
+        <div className="overflow-hidden h-[520px] md:h-[670px] w-[100%]">
           <div
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -70,11 +70,11 @@ const Home = () => {
           </div>
         </div>
         <div className='flex justify-center items-center mt-4 '>
-          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-2" onClick={()=>scroll("left")}></div>
-          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-2" onClick={()=>scroll("left")}></div>
-          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-2" onClick={()=>scroll("left")}></div>
-          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-2" onClick={nextSlide}></div>
-          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-2" onClick={prevSlide}></div>
+          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-1" onClick={()=>scroll("left")}></div>
+          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-1" onClick={()=>scroll("left")}></div>
+          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-1" onClick={()=>scroll("left")}></div>
+          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-1" onClick={nextSlide}></div>
+          <div className="bg-gray-400 hover:bg-white w-2 h-2 rounded mx-1" onClick={prevSlide}></div>
         </div>
       </div>
     

@@ -1,6 +1,7 @@
-import Answer from './Components/Answer'
-import Card from './Components/Card'
-import { ChatGPTItems,Research, Business,Developer, News } from './Components/Card/constant'
+
+import InstantAnswer from './Components/Answer'
+import Card from './Components/Cards'
+import { ChatGPTItems,Research, Business,Developer, News } from './Components/Cards/constant'
 import Footer from './Components/Footer'
 import Header from './Components/Header'
 import Home from './Components/Home'
@@ -16,7 +17,7 @@ function App() {
      <Card title={'For Developers'} item={Developer}/>
      {/* <Card title={'Stories'} item={ChatGPTItems}  increaseWeight={true}/> */}
      <Card title={'News'} item={News}/>
-     <Answer/>
+     <InstantAnswer/>
      <Footer/>
     </>
   )
